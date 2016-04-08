@@ -1,0 +1,75 @@
+// made by Fritz and Piper
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "Dog.hpp"
+
+class A
+{
+	public:
+	void Output()
+	{
+		cout << "a" << endl;
+	}
+};
+class B : public A
+{
+	public:
+	void Output()
+	{
+		cout << "b";
+		A::Output();
+	}
+	
+};
+
+class C : public B
+{
+	public:
+	void Output()
+	{
+		cout << "c";
+		B::Output();
+	}
+
+};
+
+int main()
+{
+	//A myA;
+	//B myB;
+	//C myC;
+	//myA.Output();
+	//myB.Output();
+	//myC.Output();
+
+	Dog myMutt;
+	Pomeranian myPom;
+	Wolf myWolf;
+	myMutt.SetName("Daisy");
+	myPom.SetName("Fluffy");
+	myWolf.SetName("D-Dog");
+	cout << "Dog 1: "
+		<< myMutt.GetName() << endl;
+	cout << "Breed: "
+		<< myMutt.Breed() << endl;
+	cout << "Bark: "
+		<< myMutt.Speak() << endl << endl;
+	cout << "Dog 2: "
+		<< myPom.GetName() << endl;
+	cout << "Breed: "
+		<< myPom.Breed() << endl;
+	cout << "Bark: "
+		<< myPom.Speak() << endl << endl;
+	cout << "Dog 3: "
+		<< myWolf.GetName() << endl;
+	cout << "Breed: "
+		<< myWolf.Breed() << endl;
+	cout << "Bark: "
+		<< myWolf.Speak() << endl << endl;
+	return 0;
+}
+
+
